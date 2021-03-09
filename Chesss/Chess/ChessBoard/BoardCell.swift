@@ -20,4 +20,6 @@ struct BoardCell {
         guard let figure = state.figureInPlace() else { return false }
         return figure.isWhite == ourFigure.isWhite ? false : true
     }
+    
+ 
 }

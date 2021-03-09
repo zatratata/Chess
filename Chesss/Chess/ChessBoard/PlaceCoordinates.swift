@@ -11,6 +11,9 @@ import Foundation
 struct PlaceCoordinates: Hashable {
     var height: Int
     var width: Int
+    var isOnBoard: Bool {
+        height > 0 && height < 9 && width > 0 && width < 9
+    }
     
     func figureIDforStartPlace() -> Int {
         let factor = 8

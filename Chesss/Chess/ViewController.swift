@@ -16,7 +16,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .blue
         board.makeStartingLineup()
+        print(board.cells[PlaceCoordinates(height: 3, width: 1)])
         if var currentFigure = board.showFigure(inPlace: PlaceCoordinates(height: 2, width: 2)) {
+            let availablePlaces = currentFigure.showAvailablePlaces(onBoard: board.cells)
+            board.move(figure: &currentFigure, to: availablePlaces.last ?? currentFigure.currentCoordinates)
+            print(currentFigure.currentCoordinates)
+        }
+        if var currentFigure = board.showFigure(inPlace: PlaceCoordinates(height: 1, width: 3)) {
             let availablePlaces = currentFigure.showAvailablePlaces(onBoard: board.cells)
             board.move(figure: &currentFigure, to: availablePlaces.last ?? currentFigure.currentCoordinates)
             print(currentFigure.currentCoordinates)
