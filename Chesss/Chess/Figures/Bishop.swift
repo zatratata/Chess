@@ -16,8 +16,7 @@ struct Bishop: Figure {
     
     func showAvailablePlaces(onBoard cells: [PlaceCoordinates : BoardCell]) -> [PlaceCoordinates] {
         var possiblePlaces: [PlaceCoordinates] = []
-        var nextCell = PlaceCoordinates(height: currentCoordinates.height,
-                                        width: currentCoordinates.width)
+        var nextCell = currentCoordinates
         rowDiff.forEach { width in
             rowDiff.forEach { height in
                 nextCell.width += width
@@ -28,8 +27,7 @@ struct Bishop: Figure {
                         if cells[nextCell]?.isContainOpponentFigure(for: self) ?? false  {
                             possiblePlaces.append(nextCell)
                         }
-                        nextCell = PlaceCoordinates(height: currentCoordinates.height,
-                                                    width: currentCoordinates.width)
+                        nextCell = currentCoordinates
                         break
                     }
                     

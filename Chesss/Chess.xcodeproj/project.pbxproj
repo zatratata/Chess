@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		729CBED025F8CDEA00668803 /* Array+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729CBECF25F8CDEA00668803 /* Array+Ex.swift */; };
 		B545C7FA25F4CFCF00AF0416 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B545C7F925F4CFCF00AF0416 /* AppDelegate.swift */; };
 		B545C7FE25F4CFCF00AF0416 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B545C7FD25F4CFCF00AF0416 /* ViewController.swift */; };
 		B545C80325F4CFD500AF0416 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B545C80225F4CFD500AF0416 /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		729CBECF25F8CDEA00668803 /* Array+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Ex.swift"; sourceTree = "<group>"; };
 		B545C7F625F4CFCF00AF0416 /* Chess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B545C7F925F4CFCF00AF0416 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B545C7FD25F4CFCF00AF0416 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				B545C81E25F6166A00AF0416 /* Int+Ex.swift */,
+				729CBECF25F8CDEA00668803 /* Array+Ex.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 				B545C81C25F4D90600AF0416 /* FillFreeEnum.swift in Sources */,
 				B545C82925F6265200AF0416 /* King.swift in Sources */,
 				B545C82125F6254D00AF0416 /* Knight.swift in Sources */,
+				729CBED025F8CDEA00668803 /* Array+Ex.swift in Sources */,
 				B545C81625F4D76C00AF0416 /* PlaceCoordinates.swift in Sources */,
 				B545C81F25F6166A00AF0416 /* Int+Ex.swift in Sources */,
 				B545C82525F625E200AF0416 /* Rook.swift in Sources */,

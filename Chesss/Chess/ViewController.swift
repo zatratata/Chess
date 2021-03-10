@@ -16,17 +16,38 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .blue
         board.makeStartingLineup()
-        print(board.cells[PlaceCoordinates(height: 3, width: 1)])
-        if var currentFigure = board.showFigure(inPlace: PlaceCoordinates(height: 2, width: 2)) {
+        if var currentFigure = board.showFigure(inPlace: PlaceCoordinates(height: 2, width: 1)) {
             let availablePlaces = currentFigure.showAvailablePlaces(onBoard: board.cells)
             board.move(figure: &currentFigure, to: availablePlaces.last ?? currentFigure.currentCoordinates)
             print(currentFigure.currentCoordinates)
         }
-        if var currentFigure = board.showFigure(inPlace: PlaceCoordinates(height: 1, width: 3)) {
+        if var currentFigure = board.showFigure(inPlace: PlaceCoordinates(height: 1, width: 1)) {
             let availablePlaces = currentFigure.showAvailablePlaces(onBoard: board.cells)
             board.move(figure: &currentFigure, to: availablePlaces.last ?? currentFigure.currentCoordinates)
             print(currentFigure.currentCoordinates)
         }
+    }
+    
+    private func isLeadToMateMove(figure: Figure,
+                                  from start: PlaceCoordinates,
+                                  to finish: PlaceCoordinates) -> Bool {
+        var possibleBoard = board
+        var movingFigure = figure
+        possibleBoard.move(figure: &movingFigure, to: finish)
+        if figure.isWhite {
+            for index in 0..<possibleBoard.blackFigures.count {
+                if possibleBoard.blackFigures[index].showAvailablePlaces(onBoard: possibleBoard.cells).contains(possibleBoard.whiteKingCoordinates) {
+                    return true
+                }
+            }
+        } else {
+            for index in 0..<possibleBoard.whiteFigures.count {
+                if possibleBoard.whiteFigures[index].showAvailablePlaces(onBoard: possibleBoard.cells).contains(possibleBoard.blackKingCoordinates) {
+                    return true
+                }
+            }
+        }
+        return false
     }
     
     
