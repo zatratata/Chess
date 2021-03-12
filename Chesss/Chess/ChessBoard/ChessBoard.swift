@@ -7,8 +7,10 @@
 //
 
 import Foundation
+import RxSwift
 
 struct ChessBoard {
+    var model = PublishSubject<[PlaceCoordinates: BoardCell]>()
     var cells: [PlaceCoordinates: BoardCell]
     var whiteFigures: [Figure] = []
     var blackFigures: [Figure] = []
